@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background: #082c6c;
     color: #fff;
 }
 .game{
@@ -49,6 +48,10 @@
     border-color: green;
     border: none;
     cursor: pointer;
+    background-color: green;
+    opacity: 0.8;
+    background: repeating-linear-gradient( -45deg, #3bf582, #3bf582 5px, green 5px, green 25px );
+    filter: blur(0.9px);
 }
 .move{
     font-size: 2rem;
@@ -81,3 +84,54 @@
         width: 100vw;
     }
 }
+.rock:active {
+    background-color: rgb(22, 107, 1);
+    box-shadow: 0 5px #667;
+    transform: translateY(4px);
+  }
+  .paper:active {
+    background-color: rgb(22, 107, 1);
+    box-shadow: 0 5px #667;
+    transform: translateY(4px);
+  }
+  .scissor:active {
+    background-color: rgb(22, 107, 1);
+    box-shadow: 0 5px #667;
+    transform: translateY(4px);
+  }
+  .dwight:active {
+    background-color: rgb(22, 107, 1);
+    box-shadow: 0 5px #667;
+    transform: translateY(4px);
+  }
+  .yogaball:active {
+    background-color: rgb(22, 107, 1);
+    box-shadow: 0 5px #667;
+    transform: translateY(4px);
+  }
+  .rock {
+    box-shadow: -1px 3px 1px 3.5px gray;
+  }
+  .paper {
+    box-shadow: -1px 3px 1px 3.5px gray;
+  }
+  .scissor {
+    box-shadow: -1px 3px 1px 3.5px gray;
+  }
+  .dwight {
+    box-shadow: -1px 3px 1px 3.5px gray;
+  }
+  .yogaball {
+    box-shadow: -1px 3px 1px 3.5px gray;
+  }
+  @keyframes BackgroundGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  body {
+    background: linear-gradient(132deg, #000000,#ff0000, #000000,#ff0000,#ff0000,#000000);
+    background-size: 400% 400%;
+    animation: BackgroundGradient 15s ease infinite;
+  }
+ 
