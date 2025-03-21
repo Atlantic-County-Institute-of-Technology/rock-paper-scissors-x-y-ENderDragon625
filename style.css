@@ -71,19 +71,7 @@
     margin-top: 20px;
     font-size: 1.2rem;
 }
-@media screen and (max-width: 612px) { 
-    .title{
-        text-align: center;
-    }
-    .score{
-        position: absolute;
-        top: 200px;
-        width: 100vw;
-    }
-    .options{
-        width: 100vw;
-    }
-}
+
 .rock:active {
     background-color: rgb(22, 107, 1);
     box-shadow: 0 5px #667;
@@ -129,9 +117,23 @@
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
   }
+
   body {
     background: linear-gradient(132deg, #000000,#ff0000, #000000,#ff0000,#ff0000,#000000);
     background-size: 400% 400%;
     animation: BackgroundGradient 15s ease infinite;
   }
- 
+  
+  @media screen and (max-width: 612px) { 
+    .title{
+        text-align: center;
+    }
+    .score{
+        position: absolute;
+        top: 200px;
+        width: 100vw;
+    }
+    .options{
+        width: 100vw;
+    }
+}

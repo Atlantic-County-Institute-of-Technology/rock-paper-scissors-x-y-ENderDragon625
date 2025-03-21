@@ -1,3 +1,7 @@
+const playerScoreBoard = document.querySelector('.p-count');
+const computerScoreBoard = document.querySelector('.c-count');
+const result = document.querySelector('.result');
+
 const game = () => {
     let playerScore = 0;
     let computerScore = 0;
@@ -34,17 +38,16 @@ const game = () => {
         })
 
     }
-    const winner = (player, computer) => {
-        const result = document.querySelector('.result');
-        const playerScoreBoard = document.querySelector('.p-count');
-        const computerScoreBoard = document.querySelector('.c-count');
+
+    function winner(player, computer) {
+
         player = player.toLowerCase();
         computer = computer.toLowerCase();
-        if (player === computer) {
+        if (player == computer) {
             result.textContent = 'Tie'
         }
-        else if (player == 'rock') {
-            if (computer == 'paper') {
+        else if (player.localeCompare('rock')) {
+            if (computer == 'paper' || computer == 'dwight' || computer == 'yogaball') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -55,7 +58,7 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'scissors') {
+        else if (player.localeCompare('scissors')) {
             if (computer == 'rock') {
                 result.textContent = 'Computer Won';
                 computerScore++;
@@ -66,7 +69,18 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'paper') {
+        else if (player.localeCompare('paper')) {
+            if (computer == 'scissors' || computer == 'dwight' || computer == 'yogaball' ) {
+                result.textContent = 'Computer Won';
+                computerScore++;
+                computerScoreBoard.textContent = computerScore;
+            } else {
+                result.textContent = 'Player Won';
+                playerScore++;
+                playerScoreBoard.textContent = playerScore;
+            }
+        }
+        else if (player.localeCompare('dwight')) {
             if (computer == 'scissors') {
                 result.textContent = 'Computer Won';
                 computerScore++;
@@ -77,8 +91,8 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'dwight') {
-            if (computer == 'scissors') {
+        else if (player.localeCompare('paper')) {
+            if (computer == 'yogaball' || computer == 'scissors' || computer == 'dwight') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -88,8 +102,8 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'paper') {
-            if (computer == 'yogaball') {
+        else if (player.localeCompare('yogaball')) {
+            if (computer == 'dwight' || computer == 'scissors') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -99,8 +113,8 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'yogaball') {
-            if (computer == 'dwight') {
+        else if (player.localeCompare('rock')) {
+            if (computer == 'dwight' || computer == 'yogaball' || computer == 'paper') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -110,8 +124,8 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'rock') {
-            if (computer == 'dwight') {
+        else if (player.localeCompare('rock')) {
+            if (computer == 'yogaball' || computer == 'dwight' || computer == 'paper') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -121,8 +135,8 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'rock') {
-            if (computer == 'yogaball') {
+        else if (player.localeCompare('yogaball')) {
+            if (computer == 'scissors' || computer == 'dwight') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -132,19 +146,8 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if (player == 'yogaball') {
-            if (computer == 'scissors') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player == 'paper') {
-            if (computer == 'dwight') {
+        else if (player.localeCompare('paper')) {
+            if (computer == 'dwight' || computer == 'scissors' || computer == 'yogaball') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
