@@ -11,12 +11,16 @@
     width: 100vw;
     justify-content: center;
     align-items: center;
+    -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 .title{
     position: absolute;
     top: 0;
     font-size: 4rem;
     z-index: 2;
+    -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }
 
 .score{
@@ -26,6 +30,8 @@
     position: absolute;
     top: 70px;
     z-index: 1;
+    -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
 }
 .p-count,.c-count{
     text-align: center;
@@ -119,7 +125,7 @@
   }
 
   body {
-    background: linear-gradient(132deg, #000000,#ff0000, #000000,#ff0000,#ff0000,#000000);
+    background: linear-gradient(132deg, #008d4b,#008d36, #00888d,#008d4b,#4ab6d1,#008d76);
     background-size: 400% 400%;
     animation: BackgroundGradient 15s ease infinite;
   }

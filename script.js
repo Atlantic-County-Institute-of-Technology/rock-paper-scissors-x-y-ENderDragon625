@@ -43,7 +43,7 @@ const game = () => {
 
         player = player.toLowerCase();
         computer = computer.toLowerCase();
-        if (player == computer) {
+        if (player === computer) {
             result.textContent = 'Tie'
         }
         else if (player.localeCompare('rock')) {
