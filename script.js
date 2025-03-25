@@ -1,6 +1,8 @@
+
 const playerScoreBoard = document.querySelector('.p-count');
 const computerScoreBoard = document.querySelector('.c-count');
 const result = document.querySelector('.result');
+let victory = new Audio("6am.mp3")
 
 const game = () => {
     let playerScore = 0;
@@ -47,7 +49,7 @@ const game = () => {
             result.textContent = 'Tie'
         }
         else if (player.localeCompare('rock')) {
-            if (computer == 'paper' || computer == 'dwight' || computer == 'yogaball') {
+            if (computer == 'paper' || computer == 'yogaball') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -81,18 +83,7 @@ const game = () => {
             }
         }
         else if (player.localeCompare('dwight')) {
-            if (computer == 'scissors') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player.localeCompare('paper')) {
-            if (computer == 'yogaball' || computer == 'scissors' || computer == 'dwight') {
+            if (computer == 'scissors'  || computer == 'rock') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -104,50 +95,6 @@ const game = () => {
         }
         else if (player.localeCompare('yogaball')) {
             if (computer == 'dwight' || computer == 'scissors') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player.localeCompare('rock')) {
-            if (computer == 'dwight' || computer == 'yogaball' || computer == 'paper') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player.localeCompare('rock')) {
-            if (computer == 'yogaball' || computer == 'dwight' || computer == 'paper') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player.localeCompare('yogaball')) {
-            if (computer == 'scissors' || computer == 'dwight') {
-                result.textContent = 'Computer Won';
-                computerScore++;
-                computerScoreBoard.textContent = computerScore;
-            } else {
-                result.textContent = 'Player Won';
-                playerScore++;
-                playerScoreBoard.textContent = playerScore;
-            }
-        }
-        else if (player.localeCompare('paper')) {
-            if (computer == 'dwight' || computer == 'scissors' || computer == 'yogaball') {
                 result.textContent = 'Computer Won';
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -177,6 +124,9 @@ const game = () => {
             result.style.fontSize = '2rem';
             result.innerText = 'You Won The Game'
             result.style.color = '#308D46';
+            let victory = new Audio("Assets/6am.mp3");
+        victory.play();
+        
         }
         else if (playerScore < computerScore) {
             result.style.fontSize = '2rem';
@@ -193,6 +143,7 @@ const game = () => {
         reloadBtn.addEventListener('click', () => {
             window.location.reload();
         })
+
     }
 
     playGame();
