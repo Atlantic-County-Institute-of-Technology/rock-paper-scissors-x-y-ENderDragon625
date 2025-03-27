@@ -52,8 +52,24 @@ const game = () => {
 
 
     rockBtn.addEventListener("click", () => {
-        winner(1, Math.floor(Math.random() * 5) + 1)
+        winner(1, cpuChoice())
     })
+    scissorBtn.addEventListener("click", () => {
+        winner(2, cpuChoice())
+    })
+    paperBtn.addEventListener("click", () => {
+        winner(3, cpuChoice())
+    })
+    dwightBtn.addEventListener("click", () => {
+        winner(4, cpuChoice())
+    })
+    yogaballBtn.addEventListener("click", () => {
+        winner(5, cpuChoice())
+    })
+
+
+
+    //Math.floor(Math.random() * 5) + 1
 
     function winner(player, computer) {
 
@@ -67,8 +83,7 @@ const game = () => {
         }
         //if player and rock are equal 
         else if(player == 1) {
-            console.log("rock select")
-            if (computer == 'paper' || computer == 'yogaball') {
+            if (computer == 3 || computer == 5) {
                 result.textContent = `Computer Won, ${computer} beats ${player}`;
                 computerScore++;
                 computerScoreBoard.textContent = computerScore;
@@ -79,9 +94,8 @@ const game = () => {
                 playerScoreBoard.textContent = playerScore;
             }
         }
-        else if(player.localeCompare('scissors') == 1) {
-            console.log("scissors select")
-            if (computer === 'rock') {
+        else if(player.localeCompare('scissors') == 2) {
+            if (computer === 1) {
                 console.log("rock beats scissors")
                 result.textContent = `Computer Won, ${computer} beats ${player}`;
                 computerScore++;
