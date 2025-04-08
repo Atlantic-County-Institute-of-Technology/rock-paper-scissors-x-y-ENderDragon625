@@ -2,47 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, 
-                                   initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
-    <title>Rock Paper Scissors Dwight Yogaball</title>
 </head>
 <body>
-    <section class="game">
+    <div class="container">
+        <h1>Rock Paper Scissors Dwight YogaBall</h1>
         
-   <div class="title">Rock Paper Scissors Dwight Yogaball</div>
-
-    <div class="score">  
-        <div class="playerScore">
-            <h2>Player</h2>
-            <p class="p-count count">0</p>
-
-        </div>       
-        <div class="computerScore">
-            <h2>Computer</h2>
-            <p class="c-count count">0</p>
-
+        <div class="scoreboard">
+            <div class="score">
+                <p>You</p>
+                <p id="player-score">0</p>
+            </div>
+            <div class="score">
+                <p>Computer</p>
+                <p id="computer-score">0</p>
+            </div>
         </div>
+        
+        <div class="choices">
+            <div class="choice" id="rock"><img src="assets/rock.png" alt="rock" width="50px" height="50px"></div>
+            <div class="choice" id="paper"><img src="assets/transparent-image-lined-paper-school-book-26.png" alt="paper" width="50px" height="50px"></div>
+            <div class="choice" id="scissors"><img src="assets/scissors-12.png" alt="scissor" width="50px" height="50px"></div>
+            <div class="choice" id="dwight"><img src="assets/DwightSchrute.png" alt="dwight" width="50px" height="50px"></div>
+            <div class="choice" id="yogaball"><img src="assets/pngimg.com - exercise_ball_PNG111131.png" alt="yogaball" width="50px" height="50px"></div>
+        </div>
+        
+        <div class="battle-area">
+            <div class="player">
+                <div class="player-choice" id="player-choice"></div>
+                <p>Your Choice</p>
+            </div>
+            
+            <div class="vs">VS</div>
+            
+            <div class="computer">
+                <div class="computer-choice" id="computer-choice"></div>
+                <p>Computer's Choice</p>
+            </div>
+        </div>
+        
+        <div class="result" id="result">Choose your weapon!</div>
+        
+        <button class="reset-btn" id="reset-btn">Reset Game</button>
     </div>
-      
-    <div class="move">Choose your move</div>
     
-    <div class="movesleft">Moves Left: 10 </div>
-
-    <div class="options">
-        <button class="rock">Rock <img src="assets/rock.png" alt="rock" width="50px" height="50px"></button>
-        <button class="paper">Paper <img src="assets/transparent-image-lined-paper-school-book-26.png" alt="paper" width="50px" height="50px"></button>
-        <button class="scissor">Scissors <img src="assets/scissors-12.png" alt="scissor" width="50px" height="50px"></button>   
-        <button class="dwight">Dwight <img src="assets/DwightSchrute.png" alt="dwight" width="50px" height="50px"></button> 
-        <button class="yogaball">YogaBall <img src="assets/pngimg.com - exercise_ball_PNG111131.png" alt="yogaball" width="50px" height="50px"></button>
-    </div>
-
-      <div class="result"></div>
-
-     <button class="reload"></button>
-
-   </section>
-
     <script src="script.js"></script>
 </body>
 </html>
